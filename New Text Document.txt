@@ -1,0 +1,219 @@
+const mongoose = require('mongoose');
+let schema = new mongoose.Schema({
+  PhelboID : {
+    type: String,
+    required: true,
+    unique: true,
+    default: ''
+  },
+  FirstName: {
+    type: String,
+    required: true,
+    default: ''
+  },
+  LastName : {
+    type: String,
+    required: true,
+    default: ''
+  },
+  Age :  {
+    type: Number,
+    required: true,
+    default: 0
+  },
+  DateOfBirth: {
+    type: String,
+    required: true,
+    default: ''
+  },
+  Gender: {
+    type: String,
+    required: true,
+    default: ''
+  },
+  Address: {
+    type: String,
+    required: true,
+    default: ''
+  },
+  ContactNumber: {
+    type: String,
+    required: true,
+    default: 0
+  },
+  ProfilePhoto: {
+    type: String,
+    default: ''
+  },
+AllocationStatus: [
+    {
+      Date:{
+         type: String,
+        default: ''
+      },
+      Slot1:[{
+        Time:{
+         type: String,
+         default: '9:00-11:00'
+        },
+        PatientID:{
+          type: String,
+
+           default: ''
+        },
+        FirstName: {
+          type: String,
+
+          default: ''
+        },
+        LastName : {
+          type: String,
+
+          default: ''
+        },  Address: {
+            type: String,
+
+            default: ''
+          },
+          ContactNumber: {
+            type: String,
+
+            default: 0
+          }, Test: {
+              type: String,
+              default: 'Blood'
+            },
+            Status:{
+              type:String,
+              default:''
+            }
+
+    }  ],
+      Slot2:[{
+        Time:{
+         type: String,
+
+          default: '11:00-13:00'
+        },
+        PatientID:{
+          type: String,
+
+           default: ''
+        },
+        FirstName: {
+          type: String,
+
+          default: ''
+        },
+        LastName : {
+          type: String,
+
+          default: ''
+        },  Address: {
+            type: String,
+
+            default: ''
+          },
+          ContactNumber: {
+            type: String,
+
+            default: 0
+          }, Test: {
+              type: String,
+              default: 'Blood'
+            },
+            Status:{
+              type:String,
+
+              default:''
+            }
+
+      }],
+      Slot3:[{
+        Time:{
+         type: String,
+
+          default: '14:00-16:00'
+        },
+        PatientID:{
+          type: String,
+
+           default: ''
+        },
+        FirstName: {
+          type: String,
+
+          default: ''
+        },
+        LastName : {
+          type: String,
+
+          default: ''
+        },  Address: {
+            type: String,
+
+            default: ''
+          },
+          ContactNumber: {
+            type: String,
+
+            default: 0
+          }, Test: {
+              type: String,
+              default: 'Blood'
+            },
+            Status:{
+              type:String,
+
+              default:''
+            }
+
+    }  ],
+
+      Slot4:[{
+        Time:{
+         type: String,
+
+          default: '16:00-18:00'
+        },
+        PatientID:{
+          type: String,
+
+           default: ''
+        },
+        FirstName: {
+          type: String,
+
+          default: ''
+        },
+        LastName : {
+          type: String,
+
+          default: ''
+        },  Address: {
+            type: String,
+
+            default: ''
+          },
+          ContactNumber: {
+            type: String,
+
+            default: 0
+          }, Test: {
+              type: String,
+              default: 'Blood'
+            },
+            Status:{
+              type:String,
+
+              default:''
+            }
+    }  ]
+  }]
+});
+
+let phlebo = mongoose.model('phlebo', schema);
+
+module.exports = {
+  phlebo :phlebo
+}
